@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectDoctorsOption,Option } from "../styled/StyledSelectDoctors";
+import { SelectDoctorsOption } from "../styled/StyledSelectDoctors";
 
 const SelectDoctors = (props) => {
     const {doctorArray,onChange,doctorId} = props
