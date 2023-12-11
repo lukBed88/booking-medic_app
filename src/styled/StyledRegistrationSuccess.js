@@ -55,11 +55,6 @@ const LoaderIcon = styled(FontAwesomeIcon)`
     left: 0;
     margin-top: 10px;
     color: rgb(80, 184, 231);
-    /* transform: translate(-50%,-50%); */
-    /* animation: ${spin}; */
-    /* animation-duration: 1000ms; */
-    /* animation-iteration-count: infinite; */
-    /* animation-timing-function: linear;   */
 ` 
 const RegistrationSuccess = () => {
     
