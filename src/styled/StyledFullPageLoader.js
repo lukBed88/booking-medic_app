@@ -11,6 +11,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 background-color: white;
-opacity:0.3;
+opacity:0.5;
 `
 export default StyledFullPageLoader

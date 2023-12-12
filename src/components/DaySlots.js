@@ -89,7 +89,7 @@ const DaySlots = (props) => {
                     changeActive(e)
                     selectChoicePatient({hourPatient,'patient':e.target.value,'active': active,hour})
                 }} >
-                <Option value={''}>Wybierz pacjenta</Option>
+                <Option value={''}> Wybierz pacjenta </Option>
                 {                    
                         sortedNamesArray.map((item,index) => {
                         return (
