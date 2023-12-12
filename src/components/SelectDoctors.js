@@ -8,6 +8,7 @@ const SelectDoctors = (props) => {
     const options = doctorArray && doctorArray.map((doctor) => ({
         value: doctor.idDoctor,
         label: doctor.doctor,
+        
       }));
     
         const selectedOption = options.find((doctor) => doctor.value === doctorId);

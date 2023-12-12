@@ -21,6 +21,7 @@ const PatientList = (props) => {
                 name:`${patient[0].name} ${patient[0].surname}`
             }
         })
+        
         const filteredSuggestions = listOfPatientsData.filter((suggestion) =>
         suggestion.name.toLowerCase().includes(inputValue.toLowerCase()));
 

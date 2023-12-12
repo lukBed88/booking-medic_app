@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      steps:
+    - name: Set CI to false
+      run: echo "CI=false" >> $GITHUB_ENV
+
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
