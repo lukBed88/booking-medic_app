@@ -3,6 +3,8 @@ import { ContainerMenu,ContainerNavLink,StyledNavLink,StyledIconFontAwesomeSetti
 import {faGear,faHouse} from '@fortawesome/free-solid-svg-icons'
 import { logOut } from "../auth";
 import { useNavigate } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import media from '../styled/ResponseStyled'
 
 const Welcome = (props) => {
     const {onClick,clearFlags} = props
@@ -24,20 +26,19 @@ const Welcome = (props) => {
         )
     }
     return (
+        <ThemeProvider theme={media}>
         <ContainerMenu>
-            <StyledIconFontAwesome style={{marginLeft: '40px'}} onClick={clearFlags} className={'home'} icon={faHouse}/>
+            <StyledIconFontAwesome onClick={clearFlags} className={'home'} icon={faHouse}/>
             <ContainerNavLink>
             <StyledButton onClick ={onClick} name={'doctor'}>Lista lekarzy</StyledButton>
             <StyledButton onClick ={onClick} name={'patient'}>Lista pacjentów</StyledButton>
             </ContainerNavLink>
-            <StyledNavLink><StyledIconFontAwesomeSettings onClick={() => setIsActive(prevActive => !prevActive)} style={{marginRight: '70px'}} icon={faGear}/></StyledNavLink>            
-
+            <StyledNavLink><StyledIconFontAwesomeSettings onClick={() => setIsActive(prevActive => !prevActive)} icon={faGear}/></StyledNavLink>            
                 <UlOption isOpen={active}>
                 {renderOptions()}
                 </UlOption>
-
-            
         </ContainerMenu>
+        </ThemeProvider>
     )
 }
 

@@ -3,8 +3,9 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const ContainerDoctors = styled.div`
     display: flex;
+    width: 50vw;
+    justify-content: center;
     margin: 50px auto 0 auto;
-    width: 50%;
     flex-direction: column;
 `
 const ContainerPatientCard = styled.div`
@@ -19,7 +20,8 @@ const ContainerPatientCard = styled.div`
         background-color: transparent;
 `
 const DoctorDataLi = styled.li`
-    max-width: 30%;
+    display: flex;
+    width: 30%;
     font-size: 18px;
     cursor: pointer;
     list-style: none;
@@ -30,6 +32,15 @@ const DoctorDataLi = styled.li`
         transition: 0.4s;
         color: rgb(80, 184, 231);
     }
+    @media ${props=> props.theme.media.tablet} {
+        width: 56%;
+        font-size: 16px;
+    }
+
+    @media ${props=> props.theme.media.mobile} {
+        width: 75%;
+        font-size: 14px;
+}
 `
 const HeaderContainer = styled.div`
     display: flex;
@@ -131,6 +142,17 @@ const TitleHeader = styled.h2`
     color:rgb(14, 134, 212);
     margin-top: 12px;
     font-weight: 300;
+    @media ${props=> props.theme.media.tablet} {
+        font-size: 1.4em;
+        margin-block-start: 0.6em;
+        margin-block-end: 0.6em;
+    }
+
+    @media ${props=> props.theme.media.mobile} {
+        font-size:1.3em;
+        margin-block-start: 0.4em;
+        margin-block-end: 0.4em;
+}
 `
 
 export {ContainerDoctors,ContainerPatientCard,DoctorDataLi,HeaderContainer,ContainerIconUser,IconUser,IconFormUser,DoctorNameHeader,DoctorNameParagraph,DoctorNameDescribe,ButtonCloseDoctorCard,DoctorDataContainer,DoctorData,ButtonDeleteDoctor,TitleHeader}

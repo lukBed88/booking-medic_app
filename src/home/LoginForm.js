@@ -1,6 +1,8 @@
 import React from "react";
 import { StyledHeader,ContainerStyledInput,StyledInput,IconFontAwesome,StyledButton,ErrorMessage } from '../styled/StyledLoginPanel';
 import {faAt,faKey} from '@fortawesome/free-solid-svg-icons'
+import { ThemeProvider } from "styled-components";
+import media from "../styled/ResponseStyled";
 
 export const LoginForm = (props) => {
     const {email,pass,nameChange,passName,send,error,loginState} = props
@@ -14,6 +16,7 @@ export const LoginForm = (props) => {
     }
     return (
         <>
+        <ThemeProvider theme={media}>
         <StyledHeader>Logowanie</StyledHeader>
         <form>
             <ContainerStyledInput>
@@ -43,6 +46,7 @@ export const LoginForm = (props) => {
         onClick={send}
         >Zaloguj</StyledButton>
         </form>
+        </ThemeProvider>
         </>
     )
 }

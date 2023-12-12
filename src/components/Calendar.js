@@ -21,6 +21,8 @@ import parseDate from "../helpers/parseDate";
 import sendDoctorData from "../helpers/sendDoctorData";
 import RenderSlots from "./RenderSlots";
 import Loader from "./Loader";
+import { ThemeProvider } from "styled-components";
+import media from '../styled/ResponseStyled'
 
 export const Calendar = () => {
 
@@ -31,7 +33,7 @@ export const Calendar = () => {
     const [tab, setTab] = React.useState([]);
     const [patientTab, setIsPatientTab] = React.useState([])
     const [patientsData, setIsPatientsData] = React.useState([])
-    const [inputValues, setInputValues] = React.useState(false);
+    const [inputValues, setInputValues] = React.useState(false)
     const [selectOption,setIsSelectOption] = React.useState('')
     const [terms,setIsTerms] = React.useState()
     const [formPatient,setIsFormPatient] = React.useState(false)
@@ -244,6 +246,7 @@ export const Calendar = () => {
 
 return (
     <>
+    <ThemeProvider theme={media}>
       {isLoading && <Loader />}
       {!isLoading && (<></>)} 
         <>
@@ -308,6 +311,7 @@ return (
                   />
                 </ContainerCalendar>
               ) : null}
+              
             </Container>
           ) : (
             <>
@@ -329,6 +333,7 @@ return (
             </>
           )}
         </>
+        </ThemeProvider>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import patientList from "../helpers/patientList";
 import PatientCardData from "./PatientCardData";
 import {faXmark} from '@fortawesome/free-solid-svg-icons'
-import {ContainerPatientList,ContainerPatients,InputSearchPatient,PatientsListUl,PatientsListLi,IconCloseUl,TitleHeader,ContainerList,isActiveCardPatient} from '../styled/StyledPatientList'
+import {ContainerPatientList,ContainerPatients,InputSearchPatient,PatientsListUl,PatientsListLi,IconCloseUl,TitleHeader,ContainerList} from '../styled/StyledPatientList'
 
 const PatientList = (props) => {
 

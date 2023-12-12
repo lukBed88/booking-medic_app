@@ -12,6 +12,9 @@ const ContainerHome = styled.div`
     flex-direction: column;
     margin: 0 auto;
     padding: 30px 0;
+    @media ${props=> props.theme.media.mobile} {
+       padding: 15px 0;
+  }
 `
 const StyledNavLink = styled(NavLink)`
     display: flex;
@@ -32,5 +35,9 @@ const StyledNavLink = styled(NavLink)`
         border: 1px solid rgb(80, 184, 231);
         color: white;
     }
+    @media ${props=> props.theme.media.mobile} {
+       max-width: 50%;
+       font-size: 14px;
+  }
 `
 export {ContainerHome,StyledNavLink}

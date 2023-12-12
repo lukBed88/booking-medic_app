@@ -5,6 +5,8 @@ import { validateFormCreateAccount } from "../../helpers/validator";
 import { ContainerHome,StyledNavLink } from "../../components/ContainerHome";
 import LoginLoader from "../../components/LoginLoader";
 import RegistrationSuccess from "../../styled/StyledRegistrationSuccess";
+import { ThemeProvider } from "styled-components";
+import media from '../../styled/ResponseStyled'
 
 export const RegistrationPanel = () => {
 
@@ -38,18 +40,10 @@ export const RegistrationPanel = () => {
           setLoading(false)
         }
         }
-        // if(validateErrors.length === 0){
-        //   await signUp(email,password)
-        //   .then(() => {
-        //     setIsLoginState(true)
-        // })
-        // .catch((error) => {
-        //   setIsLoginState(false)
-        // })
-        // }
 }
 
 return (
+  <ThemeProvider theme={media}>
     <ContainerHome>
       {loading && <LoginLoader/>}
       {registration && <RegistrationSuccess/>}
@@ -64,8 +58,9 @@ return (
         error={error}
         loginState={loginState}
         />
-        <StyledNavLink to = {'/'}>Wróć do Panelu</StyledNavLink>
+        <StyledNavLink to = {'/'}>Powrót</StyledNavLink>
     </ContainerHome>
+    </ThemeProvider>
 )
 
 }

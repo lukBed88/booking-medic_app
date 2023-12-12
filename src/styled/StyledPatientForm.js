@@ -16,6 +16,11 @@ const AddButton = styled.button`
           background-color: #50b8e7;
           border: 1px solid #50b8e7;       
         }
+        @media ${props=> props.theme.media.mobile} {
+          font-size: 13px;
+          padding: 6px 5px;
+          margin: 0 10px;
+        }
 `
 const ContainerForm = styled.div`
         position: relative;
@@ -25,10 +30,17 @@ const ContainerForm = styled.div`
         transform: translate(-50%,0);
         border: 2px solid black;
         border-radius: 18px;
-        overflow-y: auto;
         background-color: white;
-        border: 2px solid blue;
         z-index: 2;
+
+        @media ${props=> props.theme.media.tablet} {
+          border: 2px solid blue;
+          width: 40vw;
+        }
+        @media ${props=> props.theme.media.mobile} {
+          width: 60vw;
+        }
+
 `
 const FormTitle = styled.h3`
         width: 100%;
@@ -43,13 +55,31 @@ const FormTitle = styled.h3`
         margin-bottom: 10px;
         border-top-left-radius:15px;
         border-top-right-radius:15px;
+        @media ${props=> props.theme.media.mobile} {
+          font-size: 1rem;
+          padding: 15px 0;
+        }
 `
 const ContainerSendButton = styled.div`
         display: flex;
         width: 100%;
         justify-content: center;
         margin: 30px 0;
+        @media ${props=> props.theme.media.mobile} {
+          margin: 20px 0;
+        }
 `
+const InputContainer = styled.div`
+        display:flex;
+        justify-content: center;
+        font-size: 16px;
+        margin: 15px;
+        align-items: flex-end;
+        @media ${props=> props.theme.media.mobile} {
+          margin: 8px auto;
+          width: 75%;
+        }
+` 
 const InputForm = styled.input`
         font-size: 16px;
         width: 55%;
@@ -61,6 +91,20 @@ const InputForm = styled.input`
          font-size: 16px;
          padding-left: 10px;
          color: ${(props) => (props.border ? 'grey' : '#FF1205')};
+
+        @media ${props=> props.theme.media.tablet} {
+           font-size: 14px;
+        }
+        @media ${props=> props.theme.media.mobile} {
+           font-size: 14px;
+           padding-left: 15px;
+        }
+        }
+        @media ${props=> props.theme.media.tablet} {
+
+        }
+        @media ${props=> props.theme.media.mobile} {
+          width: 80%;
         }
 `
 const Form = styled.form`
@@ -68,30 +112,34 @@ const Form = styled.form`
         flex-direction: column;
         justify-content: flex-start;
 `
-const InputContainer = styled.div`
-        display:flex;
-        justify-content: center;
-        font-size: 16px;
-        margin: 15px;
-        align-items: flex-end;
-` 
 const IconForm = styled(FontAwesomeIcon)`
      font-size:22px;
      color:rgb(80, 184, 231);
      vertical-align: 100px;
      margin-right: 20px;
+
+     @media ${props=> props.theme.media.mobile} {
+          border: 2px solid red;
+          width: 60vw;
+          display: none;
+        }
 `
 const IconPatient = styled(FontAwesomeIcon)`
      font-size:22px;
      color:white;
      margin-right: 20px;
+     @media ${props=> props.theme.media.tablet} {
+
+        }
+     @media ${props=> props.theme.media.mobile} {
+        font-size: 16px;
+        }
 `
 const SendButton = styled.button`
         font-size: 16px;
         background-color: transparent;
-        border: 1px solid black;
+        border: 1px solid rgb(80, 184, 231);
         padding: 8px 10px;
-        margin: 40px 60px 30px 60px;
         cursor: pointer;
         transition: 0.4s;
         &:hover {
@@ -99,6 +147,13 @@ const SendButton = styled.button`
           color: white;
           background-color: #50b8e7;
           border: 1px solid #50b8e7;       
+        }
+        @media ${props=> props.theme.media.tablet} {
+          max-width: 40vw;
+        }
+        @media ${props=> props.theme.media.mobile} {
+          font-size: 13px;
+          padding: 10px 12px;
         }
 `
 const CloseButton = styled(FontAwesomeIcon)`
@@ -114,6 +169,9 @@ const CloseButton = styled(FontAwesomeIcon)`
         transition:all 0.4s;
         color: black;
     }
+    @media ${props=> props.theme.media.mobile} {
+          font-size: 16px
+        }
 `
 const ContainerErrorMessage = styled.div`
 `

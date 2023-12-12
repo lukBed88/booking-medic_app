@@ -1,6 +1,8 @@
 import React from "react";
 import { StyledHeader,ContainerStyledInput,StyledInput,IconFontAwesome,StyledButton,ErrorMessage } from '../styled/StyledLoginPanel';
 import {faAt} from '@fortawesome/free-solid-svg-icons'
+import { ThemeProvider } from "styled-components";
+import media from "../styled/ResponseStyled";
 
 const ResetPasswordForm = (props) => {
     const {email,changeEmail,send,error,loginState} = props
@@ -15,6 +17,7 @@ const ResetPasswordForm = (props) => {
 
     return (
         <>
+        <ThemeProvider theme={media}>
         <StyledHeader>Reset hasła</StyledHeader>
         <form>
         <ContainerStyledInput>
@@ -35,6 +38,7 @@ const ResetPasswordForm = (props) => {
     onClick={send}
     >Zresetuj hasło</StyledButton>
     </form>
+    </ThemeProvider>
     </>
     )
 }

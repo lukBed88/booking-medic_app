@@ -3,9 +3,17 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const StyledHeader = styled.h2`
     display: flex;
-    margin: 0 auto 12px auto;
+    margin: auto auto 12px auto;
+    justify-content: center;
     color: #43A6C6;
     padding: 15px;
+    max-width: 80%;
+
+    @media ${props=> props.theme.media.mobile} {
+        font-size: 18px;
+        padding-bottom: 5px;
+        text-align: center;
+  }
 `
 const ContainerStyledInput = styled.div`
     display: flex;
@@ -25,12 +33,25 @@ const StyledInput = styled.input`
         font-size: 14px;
         color: #AEAEAE;
         padding-left: 20px;
+    @media ${props=> props.theme.media.mobile} {
+        font-size:12px;
+        padding-left: 5px;
+  }
     }
+    @media ${props=> props.theme.media.mobile} {
+        font-size:12px;
+        padding-left: 5px;
+  }
+
 `
 const IconFontAwesome = styled(FontAwesomeIcon)`
     color: rgb(80, 184, 231);
     margin-right: 15px;
     font-size: 20px;
+
+    @media ${props=> props.theme.media.mobile} {
+        display: none;
+  }
 `
 const StyledButton = styled.button`
     display: flex;
@@ -52,6 +73,11 @@ const StyledButton = styled.button`
         border: 1px solid rgb(80, 184, 231);
         color: white;
     }
+    @media ${props=> props.theme.media.mobile} {
+        width: 50%;
+        margin: 10px auto 10px auto;
+        font-size: 14px;
+  }
 `
 const ErrorMessage = styled.p`
     display: flex;

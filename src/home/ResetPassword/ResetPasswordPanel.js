@@ -3,6 +3,8 @@ import React from "react"
 import { validateReset } from "../../helpers/validator"
 import { ContainerHome, StyledNavLink } from "../../components/ContainerHome"
 import ResetPasswordForm from "../ResetPasswordForm"
+import { ThemeProvider } from "styled-components"
+import media from '../../styled/ResponseStyled'
 
 const ResetPasswordPanel = () => {
 
@@ -34,6 +36,7 @@ const ResetPasswordPanel = () => {
     }
 
     return (
+      <ThemeProvider theme={media}>
         <ContainerHome>
         <ResetPasswordForm
         email={'email'}
@@ -42,8 +45,9 @@ const ResetPasswordPanel = () => {
         error = {error}
         loginState = {loginState}
         />
-        <StyledNavLink to = {'/'}>Wróć do Panelu</StyledNavLink>
+        <StyledNavLink to = {'/'}>Powrót</StyledNavLink>
         </ContainerHome>
+        </ThemeProvider>
     )
 }
 

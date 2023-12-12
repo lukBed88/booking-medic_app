@@ -4,7 +4,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 const DoctorContainer  = styled.div`
         position: relative;
         justify-content: center;
-        width: 25vw;
+        width: 28vw;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-8%);
@@ -12,6 +12,12 @@ const DoctorContainer  = styled.div`
         border-radius: 18px;
         background-color: white;
         z-index: 2;
+        @media ${props=> props.theme.media.tablet} {
+          width: 41vw;
+        }
+        @media ${props=> props.theme.media.mobile} {
+        width: 60vw;
+        }
 `
 const FormTitle = styled.div`
         display: flex;
@@ -27,10 +33,14 @@ const FormTitle = styled.div`
         margin-bottom: 10px;
         border-top-left-radius:15px;
         border-top-right-radius:15px;
+
 `
 const HeaderTitle = styled.h3`
     font-weight: 200;
     font-size:20px;
+    @media ${props=> props.theme.media.mobile} {
+        font-size: 16px;
+      }
 `
 const InputContainer = styled.div`
         display:flex;
@@ -38,6 +48,9 @@ const InputContainer = styled.div`
         font-size: 14px;
         margin: 10px 15px 25px 15px;
         align-items: flex-end;
+        @media ${props=> props.theme.media.mobile} {
+           margin: 15px auto;
+        }
 ` 
 const InputForm = styled.input`
         width: 50%;
@@ -49,13 +62,21 @@ const InputForm = styled.input`
         ::placeholder {
          font-size: 16px;
          padding-left: 10px;
+         @media ${props=> props.theme.media.tablet} {
+           font-size: 15px;
+        }
+        @media ${props=> props.theme.media.mobile} {
+           font-size: 13px;
+           width: 85%;
+        }
         }
 `
 const ContainerSendButton = styled.div`
         display: flex;
         width: 100%;
         justify-content: center;
-        margin: 30px 0;
+        margin: 20px 0;
+        
 `
 const SendDoctorButton = styled.button`
         display: flex;
@@ -72,6 +93,11 @@ const SendDoctorButton = styled.button`
           background-color: #50b8e7;
           border: 1px solid #50b8e7;       
         }
+        @media ${props=> props.theme.media.mobile} {
+        font-size: 13px;
+        padding: 8px 7px;
+        margin-top: -5px;
+        }
 `
 const ContainerSpecialization = styled.div`
     display: flex;
@@ -79,6 +105,14 @@ const ContainerSpecialization = styled.div`
     flex-direction: row;
     justify-content: center;
     margin: 0 auto;
+        @media ${props=> props.theme.media.tablet} {
+        flex-direction: column;
+        }
+        @media ${props=> props.theme.media.mobile} {
+        margin: 10px auto;
+        flex-direction: column;
+        width: 60vw;
+        }
 `
 const ParagraphSpecialization = styled.p`
     display: flex;
@@ -87,18 +121,34 @@ const ParagraphSpecialization = styled.p`
     align-items: center;
     margin-block-start:0;
     margin-block-end:0;
+    @media ${props=> props.theme.media.tablet} {
+        margin: 0 auto;
+        }
+    @media ${props=> props.theme.media.mobile} {
+        width: 100%;
+        font-size: 14px;
+        justify-content: center;
+        margin: 0 auto;
+        }
 `
 const SelectSpecialization = styled.select`
     border: 2px solid black;
-    /* display: ${props => props.active === true ? 'none' : 'inline'}; */
     margin-bottom: 30px;
     width: 45%;
     margin-top: 30px;
+    @media ${props=> props.theme.media.tablet} {
+        margin: 15px auto;
+        }
+    @media ${props=> props.theme.media.mobile} {
+        margin: 10px auto;
+        font-size: 12px;
+        }
 `
 const Option = styled.option`
 `
 const ContainerSlots = styled.div`
     display:flex;
+    justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     width: 100%;
@@ -134,6 +184,12 @@ const HourParagraph = styled.p`
     align-items: center;
     margin-block-start:0;
     margin-block-end:0;
+        @media ${props=> props.theme.media.tablet} {
+            font-size: 14px;
+        }
+        @media ${props=> props.theme.media.mobile} {
+            font-size: 12px;
+        }
 `
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
@@ -156,21 +212,37 @@ const CloseButton = styled(FontAwesomeIcon)`
         transition:all 0.4s;
         color: black;
     }
+    @media ${props=> props.theme.media.tablet} {
+      top:5%;
+    }
+    @media ${props=> props.theme.media.mobile} {
+      top:5%;
+      font-size: 18px;
+}
 `
 const IconTitle = styled(FontAwesomeIcon)`
      font-size:22px;
      color: white;
      margin-right: 20px;
+     @media ${props=> props.theme.media.mobile} {
+        font-size: 18px;
+        }
 `
 const IconDoctorForm = styled(FontAwesomeIcon)`
      font-size:22px;
      color:rgb(80, 184, 231);
      margin-right: 20px;
+        @media ${props=> props.theme.media.mobile} {
+           display: none;
+        }
 `
 const IconDoctorSpecialization = styled(FontAwesomeIcon)`
      font-size:22px;
      color:rgb(80, 184, 231);
      margin-right: 10px;
+        @media ${props=> props.theme.media.mobile} {
+        font-size: 18px;
+        }
 `
 const AddDoctorButton = styled.button`
         font-size: 16px;
@@ -186,6 +258,11 @@ const AddDoctorButton = styled.button`
           background-color: #50b8e7;
           border: 1px solid #50b8e7;       
         }
+
+        @media ${props=> props.theme.media.mobile} {
+                font-size: 13px;
+                padding: 6px 5px;
+}
 `
 const ParagraphOfficeHoursContainer = styled.div`
         display: flex;
@@ -200,6 +277,10 @@ const IconOfficeHours = styled(FontAwesomeIcon)`
      font-size:22px;
      color: #50b8e7;
      margin-right: 20px;
+     @media ${props=> props.theme.media.mobile} {
+        font-size: 17px;
+        }
+     
 `
 const ContainerErrorMessage = styled.div`
         text-align: center;

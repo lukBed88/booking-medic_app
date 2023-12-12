@@ -29,7 +29,8 @@ const ContainerMenu = styled.div`
     flex-direction: row;
     justify-content: center;
     padding: 20px 0;
-    border-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     justify-content: space-between;
     background-color: #0E86D4;
     margin-bottom: 20px;
@@ -39,35 +40,16 @@ const ContainerNavLink = styled.div`
     width: 30%;
     flex-direction: row;
     justify-content: space-around;
-`
-const StyledNavLink = styled(NavLink)`
-    font-size: 17px;
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-    &:hover {
-        transition: 0.3s;
-        color: #F1F1F1;
-    }
-`
-const StyledIconFontAwesome = styled(FontAwesomeIcon)`
-    font-size: 22px;
-    color: white;
-    cursor: pointer;
-    &:hover {
-        transition: 0.3s;
-        color: yellow;
-    }
-`
-const StyledIconFontAwesomeSettings = styled(FontAwesomeIcon)`
-    display: flex;
-    font-size: 22px;
-    color: white;
-    transition: 0.3s;
-    &:hover {
-        transition: 0.3s;
-        color: yellow;
-    }
+    @media ${props=> props.theme.media.tablet} {
+        font-size: 16px;
+        width: 55vw;
+        font-size: 14px;
+  }
+    @media ${props=> props.theme.media.mobile} {
+        justify-content: space-between;
+        width: 70vw;
+        font-size: 14px;
+  }
 `
 const StyledButton = styled.button`
     font-size: 18px;
@@ -80,6 +62,64 @@ const StyledButton = styled.button`
         transition: 0.3s;
         color: yellow;
     }
+    @media ${props=> props.theme.media.tablet} {
+        width: 45%;
+        font-size: 18px;
+  }
+    @media ${props=> props.theme.media.mobile} {
+        width: 45%;
+        font-size: 14px;
+  }
+`
+const StyledNavLink = styled(NavLink)`
+    display: flex;
+    justify-content: center;
+    font-size: 17px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-right: 70px;
+    &:hover {
+        transition: 0.3s;
+        color: #F1F1F1;
+    }
+    @media ${props=> props.theme.media.mobile} {
+        margin-right: 50px;
+  }
+    @media ${props=> props.theme.media.mobile} {
+        margin-right: 20px;
+        font-size: 10px;
+  }
+`
+const StyledIconFontAwesome = styled(FontAwesomeIcon)`
+    margin-left: 40px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    &:hover {
+      color: yellow;
+        transition: 0.3s;
+    }
+    @media ${props=> props.theme.media.mobile} {
+        margin-left: 20px;
+        font-size: 18px;
+  }
+`
+const StyledIconFontAwesomeSettings = styled(FontAwesomeIcon)`
+    display: flex;
+    font-size: 22px;
+    color: white;
+    transition: 0.3s;
+    &:hover {
+        transition: 0.3s;
+        color: yellow;
+    }
+    @media ${props=> props.theme.media.mobile} {
+        font-size: 18px;
+  }
+    @media ${props=> props.theme.media.mobile} {
+        font-size: 18px;
+  }
 `
 const UlOption = styled.ul`
   position: absolute;

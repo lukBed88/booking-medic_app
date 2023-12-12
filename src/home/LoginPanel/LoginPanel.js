@@ -5,6 +5,8 @@ import signIn from "../../auth/signIn";
 import {ContainerHome,StyledNavLink} from "../../components/ContainerHome";
 import { validateFormLogIn } from "../../helpers/validator";
 import LoginLoader from "../../components/LoginLoader";
+import { ThemeProvider } from "styled-components";
+import media from '../../styled/ResponseStyled'
 
 const LoginPanel = () => {
 
@@ -41,6 +43,7 @@ const LoginPanel = () => {
     }
 
 return (
+  <ThemeProvider theme={media}>
   <ContainerHome>
     {loading && <LoginLoader/>}
     <LoginForm
@@ -52,8 +55,9 @@ return (
     error = {error}
     loginState= {loginState}
     />
-  <StyledNavLink to = {'/'}>Wróć do Panelu</StyledNavLink>
+  <StyledNavLink to = {'/'}>Powrót</StyledNavLink>
     </ContainerHome>
+  </ThemeProvider>
     )
 }
 
