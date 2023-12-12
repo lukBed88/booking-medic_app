@@ -31,4 +31,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm publish
-
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder:build
+          token: ${{ secrets.TOKEN }}
+          BRANCH: gh-pages
