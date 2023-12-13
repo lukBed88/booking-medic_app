@@ -3,15 +3,16 @@
 
 name: Node.js Package
 
+name: Node.js Package
+
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
@@ -34,6 +35,5 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder:build
+          folder: build
           token: ${{ secrets.TOKEN }}
-          BRANCH: gh-pages
